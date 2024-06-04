@@ -1,0 +1,7 @@
+  ko:K17222 soxA; L-cysteine S-thiosulfotransferase [EC:2.8.5.2]
+  ko:K17223 soxX; L-cysteine S-thiosulfotransferase [EC:2.8.5.2]
+  ko:K17224 soxB; S-sulfosulfanyl-L-cysteine sulfohydrolase [EC:3.1.6.20]
+  ko:K17225 soxC; sulfane dehydrogenase subunit SoxC
+  ko:K17226 soxY; sulfur-oxidizing protein SoxY
+  ko:K17227 soxZ; sulfur-oxidizing protein SoxZ
+  ko:K22622 soxD; S-disulfanyl-L-cysteine oxidoreductase SoxD [EC:1.8.2.6]

@@ -19,7 +19,7 @@ mamba install wget diamond=2.0.15 prodigal=2.6.3 coverm -y
 conda install wget diamond=2.0.15 prodigal=2.6.3 coverm -y
 ```
 
-### Step 2. Download or clone OSDB repository
+### Step 2. Download or clone CycScan repository
 ```sh
 git clone https://github.com/jchenek/CycScan.git
 ```

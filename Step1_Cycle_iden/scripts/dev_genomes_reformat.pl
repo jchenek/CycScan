@@ -1,9 +1,14 @@
 #!usr/bin/perl
 use warnings;
 #usage: perl s1_fa_reformat.pl <IN original.fa> > <OU reformated.fa>
+($file) = @ARGV ;
 
-open IN, "$ARGV[0]";
-open OU1, ">./tem.reformated";
+$name_1 = (split /\//,$file)[-1];
+$name_2 = (split /\./,$name_1)[0];
+$name_2 =~ s/[\W]//g;
+
+open IN, "$file";
+open OU1, ">./tem.$name_2";
 while(<IN>){
 	s/\r//g;
 	chomp;
@@ -20,7 +25,7 @@ while(<IN>){
 close IN;
 close OU1;
 
-open IN, "./tem.reformated";
+open IN, "./tem.$name_2";
 $/=">";<IN>;
 while (<IN>) {
 	chomp;
@@ -30,6 +35,6 @@ while (<IN>) {
 	$seq=~s/\*$//;
 	print ">$id\n$seq\n";
 }
-unlink './tem.reformated';
+system("rm tem.$name_2");
 close IN;
 

@@ -3,10 +3,9 @@ use warnings;
 #Usage: perl .pl <IN elemental_cycle_pathways.tsv> <IN dir_diamond_out_1> <IN dir_prodigal_cds_f*a> <IN path_to_CycScan>
 #make sure dev_ko_gene_extract.pl existed
 
-($elemental_cycle_pathways, $dir_diamond_out_1, $dir_prodigal_cds_fa, $path_to_CycScan) = @ARGV ;
+($elemental_cycle_pathways, $dir_diamond_out_1, $prodigal_cds_fa, $path_to_CycScan) = @ARGV ;
 
 open OU, ">./ko_extract_com";
-print OU "mkdir CycScan_seqs_extract\n";
 open IN, "<$elemental_cycle_pathways";
 <IN>; #ignore the header
 while (<IN>) {
@@ -21,13 +20,14 @@ foreach my$file (@filelist) {
 if($file =~ /tsv$/){
 $filename = $file;
 $filename =~ s/\.cds.m6out.*tsv//;
-print OU "perl $path_to_CycScan\/Step1_Cycle_iden/scripts/dev_ko_gene_extract.pl $id $dir_diamond_out_1\/$file $dir_prodigal_cds_fa\/$filename\* $path_to_CycScan CycScan_seqs_extract\/$filename\_$id\.fa \n";
+print OU "perl $path_to_CycScan\/Step1_Cycle_iden/scripts/dev_ko_gene_extract.pl $id $dir_diamond_out_1\/$file $prodigal_cds_fa $path_to_CycScan CycScan_seqs_extract\/$filename\_$id\.fa \n";
 }
 }
 }
 close IN;
 close OU;
-system("sh ko_extract_com");
+system("mkdir CycScan_seqs_extract");
+system("ParaFly -c ko_extract_com -CPU 64 ");
 system("rm ko_extract_com");
 
 my$DIR_PATH = $dir_diamond_out_1;

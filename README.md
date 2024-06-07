@@ -19,7 +19,7 @@ mamba install wget parafly diamond=2.0.15 prodigal=2.6.3 coverm -y
 conda install wget parafly diamond=2.0.15 prodigal=2.6.3 coverm -y
 ```
 
-### Step 2. Download or clone OSDB repository
+### Step 2. Download or clone CycScan repository
 ```sh
 git clone https://github.com/jchenek/CycScan.git
 ```
@@ -39,13 +39,13 @@ Usage
 You may check cycle maps in dir 'Cycle_MAPs'.
 
 ```sh
-conda activate OSDB
+conda activate CycScan
 perl /PATH/TO/Cyciden.pl -i /PATH/TO/YOUR/fa_dir -p /PATH/TO/CycScan_dir
 ```
 
 - `Step 2`: Cycles abundance
 
 ```sh
-conda activate OSDB
+conda activate CycScan
 perl /PATH/TO/Cycabun.pl -i /PATH/TO/YOUR/fa_dir -f fq_list -t cpu_number -p /PATH/TO/CycScan_dir
 ```

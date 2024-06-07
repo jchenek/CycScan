@@ -28,10 +28,14 @@ print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s3_cds_diamond.pl prodig
 print OU2 "find . -wholename \"\./diamond_out/\*\" -type f -size 0c | xargs -n 1 rm -f\n";
 print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s4_kegg_anno.pl $CycScan_PATH\/CycScan_DB/CycScan_DB_anno.txt diamond_out/ diamond_out/\n";
 print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s5.1_ko_summary.pl $CycScan_PATH\/CycScan_DB/elemental_cycle_pathways.tsv diamond_out_2/ > Cyciden_summary.tsv\n";
-print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s5.2_ko_seq_extract.pl $CycScan_PATH\/CycScan_DB/elemental_cycle_pathways.tsv diamond_out_1/ prodigal/cds_fna/ $CycScan_PATH\n";
+print OU2 "cat prodigal/cds_fna//* > prodigal.tmp.fa \n";
+print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/dev_genomes_reformat.pl prodigal.tmp.fa > prodigal.fa \n";
+print OU2 "rm prodigal.tmp.fa \n";
+print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s5.2_ko_seq_extract.pl $CycScan_PATH\/CycScan_DB/elemental_cycle_pathways.tsv diamond_out_1/ prodigal.fa $CycScan_PATH\n";
 print OU2 "mkdir workfiles\nmv diamond_out* workfiles/\nmv label/ workfiles/\nmv reformated/ workfiles/\nmv prodigal/ workfiles/\ncd $current_path\n";
 system("sh Cyciden_com");
 system("rm ./Cyciden_com");
+system("rm ./prodigal.fa");
 
 print "###############################################################################\n";
 print "###############################################################################\n";

@@ -36,6 +36,7 @@ print OU2 "mkdir workfiles\nmv diamond_out* workfiles/\nmv label/ workfiles/\nmv
 system("sh Cyciden_com");
 system("rm ./Cyciden_com");
 system("rm ./prodigal.fa");
+system("rm ./ko_extract_com.completed");
 
 print "###############################################################################\n";
 print "###############################################################################\n";

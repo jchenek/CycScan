@@ -44,7 +44,7 @@ conda activate cycscan
 perl /PATH/TO/Cyciden.pl -i /PATH/TO/YOUR/fa_dir -p /PATH/TO/CycScan_dir
 ```
 
-- `Step 2`: Cycles abundance
+- `Step 2`: Cycles abundance (not applicable for MAGs analysis)
 
 ```sh
 conda activate cycscan

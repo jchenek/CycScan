@@ -10,13 +10,13 @@ Installation
 
 ### Step 1. Create a conda environment
 ```sh
-conda create -n CycScan -y
-conda activate CycScan
+conda create -n cycscan -y
+conda activate cycscan
 
 #mamba is recommend
 mamba install wget parafly diamond=2.0.15 prodigal=2.6.3 coverm -y 
 #or
-conda install wget parafly diamond=2.0.15 prodigal=2.6.3 coverm -y
+#conda install wget parafly diamond=2.0.15 prodigal=2.6.3 coverm -y
 ```
 
 ### Step 2. Download or clone CycScan repository

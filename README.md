@@ -39,13 +39,13 @@ Usage
 You may check cycle maps in dir 'Cycle_MAPs'.
 
 ```sh
-conda activate CycScan
+conda activate cycscan
 perl /PATH/TO/Cyciden.pl -i /PATH/TO/YOUR/fa_dir -p /PATH/TO/CycScan_dir
 ```
 
 - `Step 2`: Cycles abundance
 
 ```sh
-conda activate CycScan
+conda activate cycscan
 perl /PATH/TO/Cycabun.pl -i /PATH/TO/YOUR/fa_dir -f fq_list -t cpu_number -p /PATH/TO/CycScan_dir
 ```

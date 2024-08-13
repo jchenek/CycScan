@@ -27,7 +27,9 @@ print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s2_genomes_prodigal.pl r
 print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s3_cds_diamond.pl prodigal/cds_faa/ $CycScan_PATH\/CycScan_DB/CycScan_DB.dmnd\n";
 print OU2 "find . -wholename \"\./diamond_out/\*\" -type f -size 0c | xargs -n 1 rm -f\n";
 print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s4_kegg_anno.pl $CycScan_PATH\/CycScan_DB/CycScan_DB_anno.txt diamond_out/ diamond_out/\n";
-print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s5.1_ko_summary.pl $CycScan_PATH\/CycScan_DB/elemental_cycle_pathways.tsv diamond_out_2/ > Cyciden_summary.tsv\n";
+print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s5.1_ko_summary.pl $CycScan_PATH\/CycScan_DB/elemental_cycle_pathways.tsv diamond_out_2/ > Cyciden_summary_1.tsv\n";
+print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/s5.1_ko_summary_2.pl $CycScan_PATH\/CycScan_DB/elemental_cycle_pathways.tsv Cyciden_summary_1.tsv  > Cyciden_summary.tsv\n";
+print OU2 "rm Cyciden_summary_1.tsv \n";
 print OU2 "cat prodigal/cds_fna//* > prodigal.tmp.fa \n";
 print OU2 "perl $CycScan_PATH\/Step1_Cycle_iden/scripts/dev_genomes_reformat.pl prodigal.tmp.fa > prodigal.fa \n";
 print OU2 "rm prodigal.tmp.fa \n";
@@ -40,7 +42,7 @@ system("rm ./ko_extract_com.completed");
 
 print "###############################################################################\n";
 print "###############################################################################\n";
-print "###### Cyciden pipeline is finished!\n###### 'Cyciden_summary.tsv' file showes how many merker genes were detected in each sample.\n###### 'CycScan_seqs_extract' dir contains seqs of each marker gene in each sample\n";
+print "###### Cyciden pipeline is finished!\n###### You may see some warning info from 'rm'. It is expected and normal.\n###### 'Cyciden_summary.tsv' file showes how many merker genes were detected in each sample.\n###### 'CycScan_seqs_extract' dir contains seqs of each marker gene in each sample\n";
 print "###############################################################################\n";
 print "###############################################################################\n";
 }

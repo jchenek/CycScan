@@ -26,6 +26,7 @@ git clone https://github.com/jchenek/CycScan.git
 
 ### Step 3. Prepare database (run this step in dir 'CycScan_DB')
 ```sh
+#run following scripts one by one, pay attention to the std output info of each script
 sh DB_prep_s1_get_ko_genes.sh
 perl DB_prep_s2_get_gene_seqs.pl ko_genes.txt
 sh DB_prep_s3_make_DB_and_sapce_release.sh

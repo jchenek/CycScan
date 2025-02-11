@@ -43,8 +43,3 @@ You may check cycle maps in dir 'Cycle_MAPs'.
 conda activate cycscan
 perl /PATH/TO/Cyciden.pl -i /PATH/TO/YOUR/fa_dir -p /PATH/TO/CycScan_dir
 ```
-
-
-Shiozaki, T., Fujiwara, A., Ijichi, M., Harada, N., Nishino, S., Nishi, S., Nagata, T., & Hamasaki, K. (2018). Diazotroph community structure and the role of nitrogen fixation in the nitrogen cycle in the Chukchi Sea (western Arctic Ocean). Limnology and Oceanography, 63(5), 2191–2205. https://doi.org/10.1002/lno.10933
-```
-

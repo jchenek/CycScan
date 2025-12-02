@@ -27,7 +27,7 @@ print OU "perl $path_to_CycScan\/Step1_Cycle_iden/scripts/dev_ko_gene_extract.pl
 close IN;
 close OU;
 system("mkdir CycScan_seqs_extract");
-system("ParaFly -c ko_extract_com -CPU 5 ");
+system("ParaFly -c ko_extract_com -CPU 1 ");
 system("rm ko_extract_com");
 
 my$DIR_PATH = $dir_diamond_out_1;

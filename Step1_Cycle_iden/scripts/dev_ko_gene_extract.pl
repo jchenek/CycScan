@@ -8,7 +8,7 @@ use warnings;
 
 $id_1 = $out_name;
 $id_2 = (split /\//,$id_1)[-1];
-$id_3 = (split /\./,$id_2)[0];
+$id_3 = $id_2;
 
 open IN1, "$path_diamond";
 open OU1, ">./tmp.$id_3\.$ko\.id";
